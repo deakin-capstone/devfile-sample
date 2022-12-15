@@ -6,6 +6,7 @@ COPY package*.json ./
 
 # Install app dependencies
 RUN npm ci
+RUN yum install -y imagemagick
 
 # Copy the dependencies into a Slim Node docker image
 FROM registry.access.redhat.com/ubi8/nodejs-16-minimal:latest
