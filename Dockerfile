@@ -8,7 +8,7 @@ COPY package*.json ./
 RUN npm ci
 
 # Copy the dependencies into a Slim Node docker image
-FROM registry.access.redhat.com/ubi8/nodejs-16-minimal:latest
+FROM registry.access.redhat.com/ubi8/nodejs-16
 
 # Install app dependencies
 COPY --from=0 /opt/app-root/src/node_modules /opt/app-root/src/node_modules
